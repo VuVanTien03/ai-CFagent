@@ -1,0 +1,8 @@
+recbole
+numpy
+tqdm
+torch
+agentverse
+fuzzywuzzy
+openai
+faiss-cpu
