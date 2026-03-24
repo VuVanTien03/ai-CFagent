@@ -1,20 +1,15 @@
-# Core framework
-torch>=1.11.0,<2.1.0
-numpy>=1.23.0
-
-# Recommender system framework
+torch==2.6.0
+numpy==1.26.4
+scipy==1.11.4
+pandas==2.2.3
 recbole==1.2.0
-
-# OpenAI — PHẢI giữ < 1.0.0 vì dùng embeddings_utils và API cũ
 openai==0.28.1
-
-# Fuzzy string matching
+pydantic==1.10.26
+PyYAML==6.0.3
+aiohttp==3.13.3
+tenacity==8.5.0
 fuzzywuzzy==0.18.0
-python-Levenshtein==0.12.2   # tăng tốc fuzzywuzzy, tránh cảnh báo
-
-# Async support (dùng asyncio.run + agenerate_response)
-aiohttp>=3.8.0
-
-# Utility
-tqdm>=4.64.0
-scipy>=1.9.0                  # distances_from_embeddings dựa vào scipy
+python-Levenshtein==0.27.3
+gradio==3.50.2
+opencv-python==4.11.0.86
+tqdm==4.67.3
