@@ -1,8 +1,20 @@
-recbole
-numpy
-tqdm
-torch
-agentverse
-fuzzywuzzy
-openai
-faiss-cpu
+# Core framework
+torch>=1.11.0,<2.1.0
+numpy>=1.23.0
+
+# Recommender system framework
+recbole==1.2.0
+
+# OpenAI — PHẢI giữ < 1.0.0 vì dùng embeddings_utils và API cũ
+openai==0.28.1
+
+# Fuzzy string matching
+fuzzywuzzy==0.18.0
+python-Levenshtein==0.12.2   # tăng tốc fuzzywuzzy, tránh cảnh báo
+
+# Async support (dùng asyncio.run + agenerate_response)
+aiohttp>=3.8.0
+
+# Utility
+tqdm>=4.64.0
+scipy>=1.9.0                  # distances_from_embeddings dựa vào scipy
