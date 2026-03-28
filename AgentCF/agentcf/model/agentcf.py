@@ -17,13 +17,53 @@ from tqdm import tqdm  # Thư viện hiển thị thanh tiến trình
 import random  # Thư viện sinh số ngẫu nhiên
 from itertools import chain  # Hàm nối các iterator
 import numpy as np  # Thư viện tính toán số học
-from openai.embeddings_utils import (  # Các hàm tiện ích cho embedding từ OpenAI
-    get_embedding,  # Lấy embedding từ text
-    distances_from_embeddings,  # Tính khoảng cách giữa các embedding
-    tsne_components_from_embeddings,  # Giảm chiều bằng t-SNE
-    chart_from_components,  # Tạo biểu đồ từ components
-    indices_of_nearest_neighbors_from_distances,  # Tìm chỉ số hàng xóm gần nhất
-)
+from scipy import spatial  # Thư viện tính toán không gian (cho khoảng cách cosine)
+
+
+# Helper functions thay thế cho openai.embeddings_utils
+def distances_from_embeddings(query_embedding, embeddings, distance_metric="cosine"):
+    """
+    Tính khoảng cách giữa query embedding và list embeddings
+    
+    Tham số:
+        query_embedding: Embedding của query (tensor hoặc numpy array)
+        embeddings: List hoặc tensor của embeddings
+        distance_metric: Loại khoảng cách (mặc định là cosine)
+    
+    Trả về:
+        distances: Numpy array chứa khoảng cách
+    """
+    # Chuyển về numpy nếu là tensor
+    if torch.is_tensor(query_embedding):
+        query_embedding = query_embedding.cpu().numpy()
+    if torch.is_tensor(embeddings):
+        embeddings = embeddings.cpu().numpy()
+    
+    # Đảm bảo embeddings là 2D array
+    if len(embeddings.shape) == 1:
+        embeddings = embeddings.reshape(1, -1)
+    
+    # Tính khoảng cách cosine
+    distances = []
+    for emb in embeddings:
+        distance = spatial.distance.cosine(query_embedding, emb)
+        distances.append(distance)
+    
+    return np.array(distances)
+
+
+def indices_of_nearest_neighbors_from_distances(distances):
+    """
+    Trả về indices của hàng xóm gần nhất dựa trên khoảng cách
+    
+    Tham số:
+        distances: Numpy array chứa khoảng cách
+    
+    Trả về:
+        indices: Numpy array chứa indices đã sắp xếp theo khoảng cách tăng dần
+    """
+    return np.argsort(distances)
+
 
 # Định nghĩa lớp AgentCF kế thừa từ SequentialRecommender
 class AgentCF(SequentialRecommender):
@@ -79,8 +119,8 @@ class AgentCF(SequentialRecommender):
                      'llm_type': 'embedding',  # Loại LLM
                      'api_key_list': self.config['api_key_list'],  # Danh sách API key
                      'current_key_idx': self.config['current_key_idx']},  # Index của key hiện tại
-             'llm_chat': {'model': 'gpt-3.5-turbo-16k-0613',  # Mô hình chat
-                          'llm_type': 'gpt-3.5-turbo-16k-0613',  # Loại LLM chat
+             'llm_chat': {'model': self.config['llm_model'],  # Mô hình chat
+                          'llm_type': self.config['llm_model'],  # Loại LLM chat
                           'temperature': self.config['llm_temperature'],  # Nhiệt độ
                           'max_tokens': self.config['max_tokens_chat'],  # Số token tối đa cho chat
                           'api_key_list': self.config['api_key_list'],  # Danh sách API key
@@ -136,7 +176,7 @@ class AgentCF(SequentialRecommender):
                 os.makedirs(path)
             
             # Ghi thông tin meta của user vào file
-            with open(osp.join(path,f'user.{user_id}'),'w') as f:
+            with open(osp.join(path,f'user.{user_id}'),'w', encoding='utf-8') as f:
                 f.write('~'*20 + 'Meta information' + '~'*20 + '\n')
                 f.write(f'The user wrote the following self-description as follows: {user_description}\n')
 
@@ -160,7 +200,7 @@ class AgentCF(SequentialRecommender):
                 os.makedirs(path)
             
             # Ghi thông tin meta của item vào file
-            with open(osp.join(path,f'item.{item_id}'),'w') as f:
+            with open(osp.join(path,f'item.{item_id}'),'w', encoding='utf-8') as f:
                 f.write('~'*20 + 'Meta information' + '~'*20 + '\n')
                 f.write(f'The item has the following characteristics: {item_description} \n')
 
@@ -175,8 +215,8 @@ class AgentCF(SequentialRecommender):
                    'max_tokens':self.config['max_tokens'],  # Số token tối đa
                    'api_key_list':self.config['api_key_list'],  # Danh sách API key
                    'current_key_idx': self.config['current_key_idx'], },  # Index key hiện tại
-            'llm_chat':{'model':'gpt-3.5-turbo-16k-0613',  # Mô hình chat
-                        'llm_type':'gpt-3.5-turbo-16k-0613',  # Loại LLM chat
+            'llm_chat':{'model':self.config['llm_model'],  # Mô hình chat
+                        'llm_type':self.config['llm_model'],  # Loại LLM chat
                         'temperature':self.config['llm_temperature_test'],  # Nhiệt độ khi test
                         'max_tokens':self.config['max_tokens_chat'],  # Số token tối đa chat
                         'api_key_list':self.config['api_key_list'],  # Danh sách API key
@@ -220,15 +260,15 @@ class AgentCF(SequentialRecommender):
                    'max_tokens':self.config['max_tokens'],
                    'api_key_list':self.config['api_key_list'],
                    'current_key_idx': self.config['current_key_idx']},
-            'llm_chat':{'model':'gpt-3.5-turbo-16k-0613',  # Cấu hình LLM chat
-                        'llm_type':'gpt-3.5-turbo-16k-0613',
-                        'temperature':self.config['llm_temperature'],
-                        'max_tokens':self.config['max_tokens_chat'],
-                        'api_key_list':self.config['api_key_list'],
-                        'current_key_idx': self.config['current_key_idx']},
+                        'llm_chat':{'model':self.config['llm_model'],  # Cấu hình LLM chat
+                                    'llm_type':self.config['llm_model'],
+                                    'temperature':self.config['llm_temperature'],
+                                    'max_tokens':self.config['max_tokens_chat'],
+                                    'api_key_list':self.config['api_key_list'],
+                                    'current_key_idx': self.config['current_key_idx']},
             'agent_mode':'user',  # Chế độ agent là user
             'output_parser_type':'useragent',  # Loại parser đầu ra
-            'historical_interactions':[],  # Lịch sử tương tác (rỗng)
+            'historical_interactions':{},  # Lịch sử tương tác (dictionary rỗng)
             'user_prompt_template_true': self.config['user_prompt_template_true']  # Template prompt thực
         }
         
@@ -279,15 +319,15 @@ class AgentCF(SequentialRecommender):
                                'max_tokens':self.config['max_tokens'],
                                'api_key_list':self.config['api_key_list'],
                                'current_key_idx': self.config['current_key_idx']},
-                        'llm_chat':{'model':'gpt-3.5-turbo-16k-0613',  # Cấu hình LLM chat
-                                    'llm_type':'gpt-3.5-turbo-16k-0613',
+                        'llm_chat':{'model':self.config['llm_model'],  # Cấu hình LLM chat
+                                    'llm_type':self.config['llm_model'],
                                     'temperature':self.config['llm_temperature'],
                                     'max_tokens':self.config['max_tokens_chat'],
                                     'api_key_list':self.config['api_key_list'],
                                     'current_key_idx': self.config['current_key_idx']},
                         'agent_mode':'user',  # Chế độ agent
                         'output_parser_type':'useragent',  # Loại parser
-                        'historical_interactions':[],  # Lịch sử tương tác
+                        'historical_interactions':{},  # Lịch sử tương tác (dictionary rỗng)
                         'user_prompt_template_true': self.config['user_prompt_template_true']}  # Template thực
             return user_context
         else:
@@ -309,15 +349,15 @@ class AgentCF(SequentialRecommender):
                                'max_tokens':self.config['max_tokens'],
                                'api_key_list':self.config['api_key_list'],
                                'current_key_idx': self.config['current_key_idx']},
-                        'llm_chat':{'model':'gpt-3.5-turbo-16k-0613',
-                                    'llm_type':'gpt-3.5-turbo-16k-0613',
+                        'llm_chat':{'model':self.config['llm_model'],
+                                    'llm_type':self.config['llm_model'],
                                     'temperature':self.config['llm_temperature'],
                                     'max_tokens':self.config['max_tokens_chat'],
                                     'api_key_list':self.config['api_key_list'],
                                     'current_key_idx': self.config['current_key_idx']},
                         'agent_mode':'user',
                         'output_parser_type':'useragent',
-                        'historical_interactions':[],
+                        'historical_interactions':{},  # Lịch sử tương tác (dictionary rỗng)
                         'user_prompt_template_true': self.config['user_prompt_template_true']}
             return user_context
 
@@ -348,8 +388,8 @@ class AgentCF(SequentialRecommender):
                    'max_tokens':self.config['max_tokens'],
                    'api_key_list':self.config['api_key_list'],
                    'current_key_idx': self.config['current_key_idx']},
-            'llm_chat':{'model':'gpt-3.5-turbo-16k-0613',  # Cấu hình LLM chat
-                        'llm_type':'gpt-3.5-turbo-16k-0613',
+            'llm_chat':{'model':self.config['llm_model'],  # Cấu hình LLM chat
+                        'llm_type':self.config['llm_model'],
                         'temperature':self.config['llm_temperature'],
                         'max_tokens':self.config['max_tokens_chat'],
                         'api_key_list':self.config['api_key_list'],
@@ -389,8 +429,8 @@ class AgentCF(SequentialRecommender):
                                'max_tokens':self.config['max_tokens'],
                                'api_key_list':self.config['api_key_list'],
                                'current_key_idx': self.config['current_key_idx']},
-                        'llm_chat':{'model':'gpt-3.5-turbo-16k-0613',  # Cấu hình LLM chat
-                                    'llm_type':'gpt-3.5-turbo-16k-0613',
+                        'llm_chat':{'model':self.config['llm_model'],  # Cấu hình LLM chat
+                                    'llm_type':self.config['llm_model'],
                                     'temperature':self.config['llm_temperature'],
                                     'max_tokens':self.config['max_tokens_chat'],
                                     'api_key_list':self.config['api_key_list'],
@@ -434,8 +474,8 @@ class AgentCF(SequentialRecommender):
                                'max_tokens':self.config['max_tokens'],
                                'api_key_list':self.config['api_key_list'],
                                'current_key_idx': self.config['current_key_idx']},
-                        'llm_chat':{'model':'gpt-3.5-turbo-16k-0613',  # Cấu hình LLM chat
-                                    'llm_type':'gpt-3.5-turbo-16k-0613',
+                        'llm_chat':{'model':self.config['llm_model'],  # Cấu hình LLM chat
+                                    'llm_type':self.config['llm_model'],
                                     'temperature':self.config['llm_temperature'],
                                     'max_tokens':self.config['max_tokens_chat'],
                                     'api_key_list':self.config['api_key_list'],
@@ -1037,7 +1077,7 @@ class AgentCF(SequentialRecommender):
                 os.makedirs(path)
             
             # Ghi log vào file
-            with open(osp.join(path, f'user.{str(user_id)}'), 'a') as f:
+            with open(osp.join(path, f'user.{str(user_id)}'), 'a', encoding='utf-8') as f:
                 f.write('~' * 20 + 'Updation during reflection' + '~' * 20 + '\n')
                 f.write(
                     f'There are two candidate CDs. \n The positive CD has the following information: {pos_item_descriptions_forward[i]}. \n The negative CD has the following information: {neg_item_descriptions_forward[i]}\n\n')
@@ -1080,7 +1120,7 @@ class AgentCF(SequentialRecommender):
             if not os.path.exists(path):
                 os.makedirs(path)
             
-            with open(osp.join(path, f'user.{str(user_id)}'), 'a') as f:
+            with open(osp.join(path, f'user.{str(user_id)}'), 'a', encoding='utf-8') as f:
                 f.write('~' * 20 + 'New interaction' + '~' * 20 + '\n')
                 f.write(
                     f'There are two candidate CDs. \n The first CD has the following information: {list(self.item_agents[int(batch_pos_item[i])].memory_embedding.keys())[-1]}. \n The second CD has the following information: {list(self.item_agents[int(batch_neg_item[i])].memory_embedding.keys())[-1]}\n\n')
@@ -1105,7 +1145,7 @@ class AgentCF(SequentialRecommender):
             if not os.path.exists(path):
                 os.makedirs(path)
             
-            with open(osp.join(path, f'item.{str(pos_item_id)}'), 'a') as f:
+            with open(osp.join(path, f'item.{str(pos_item_id)}'), 'a', encoding='utf-8') as f:
                 f.write('~' * 20 + 'New interaction' + '~' * 20 + '\n')
                 f.write(
                     f"You: {self.item_agents[pos_item_id].role_description['item_title']} and the other movie: {self.item_agents[int(batch_neg_item[i])].role_description['item_title']} are recommended to a user.\n\n")
@@ -1133,7 +1173,7 @@ class AgentCF(SequentialRecommender):
                 if not os.path.exists(path):
                     os.makedirs(path)
                 
-                with open(osp.join(path, f'item.{str(neg_item_id)}'), 'a') as f:
+                with open(osp.join(path, f'item.{str(neg_item_id)}'), 'a', encoding='utf-8') as f:
                     f.write('~' * 20 + 'New interaction' + '~' * 20 + '\n')
                     f.write(
                         f"You: {self.item_agents[neg_item_id].role_description['item_title']} and the other movie: {self.item_agents[pos_item_id].role_description['item_title']} are recommended to a user.\n\n")
@@ -1210,7 +1250,7 @@ class AgentCF(SequentialRecommender):
                 )
             
             # Lưu user descriptions và embeddings
-            with open(f'{path}/user','w') as f:
+            with open(f'{path}/user','w', encoding='utf-8') as f:
                 f.write('user_id:token\tuser_description:token_seq\n')  # Header
                 for user_id, user_context in self.user_agents.items():
                     user_description = user_context.memory_1[-1]

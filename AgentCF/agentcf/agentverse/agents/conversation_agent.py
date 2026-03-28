@@ -4,7 +4,7 @@ import logging
 from logging import getLogger
 import bdb
 from string import Template
-from typing import TYPE_CHECKING, List
+from typing import TYPE_CHECKING, List, Dict, Any, ClassVar
 import random
 from agentverse.message import Message
 from pydantic import BaseModel, Field
@@ -66,10 +66,10 @@ class RecAgent(BaseAgent):
     system_prompt_template_evaluation_retrieval: str
     system_prompt_template_evaluation_sequential: str
     n_users: int = 500
-    memory: list = []
-    user_examples = defaultdict(dict)
+    memory: List[Any] = []
+    user_examples: ClassVar[Dict[Any, Dict]] = defaultdict(dict)
 
-    user_id2memory: dict = defaultdict(list)
+    user_id2memory: Dict[Any, List] = defaultdict(list)
     def step(self, env_description: str = "") -> Message:
         prompt = self._fill_prompt_template(env_description)
 
@@ -237,15 +237,15 @@ class RecAgent(BaseAgent):
 @agent_registry.register("useragent")
 class UserAgent(BaseAgent):
     llm_chat: BaseLLM
-    role_description: dict
+    role_description: Dict[str, Any]
     role_description_string_1: str
     user_prompt_system_role: str
     user_prompt_template_true: str
     role_description_string_3: str
-    memory_1: list = []
-    update_memory: list = []
-    feedback: list = []
-    historical_interactions: dict = {}
+    memory_1: List[Any] = []
+    update_memory: List[Any] = []
+    feedback: List[Any] = []
+    historical_interactions: Dict[str, Any] = {}
 
     def step(self, env_description: str = "") -> Message:
         prompt = self._fill_prompt_template(env_description)
@@ -394,13 +394,13 @@ class UserAgent(BaseAgent):
 @agent_registry.register("itemagent")
 class ItemAgent(BaseAgent):
     llm_chat: BaseLLM
-    role_description: dict
+    role_description: Dict[str, Any]
     role_description_string: str
     item_prompt_template_true: str
-    memory_embedding: dict
-    memory: list = []
-    update_memory: list = []
-    memory_review: dict = {}
+    memory_embedding: Dict[str, Any]
+    memory: List[Any] = []
+    update_memory: List[Any] = []
+    memory_review: Dict[str, Any] = {}
 
     def step(self, env_description: str = "") -> Message:
         prompt = self._fill_prompt_template(env_description)
