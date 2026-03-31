@@ -98,7 +98,7 @@ AgentCF kế thừa từ `SequentialRecommender` của thư viện RecBole, cho 
 ```python
 config = {
     # === LLM Configuration ===
-    'llm_model': 'gpt-2-mini',           # Model chat chính
+    'llm_model': 'gpt-5-mini',           # Model chat chính
     'embedding_model': 'ollama-embedding',  # Model embedding
     'llm_temperature': 0.2,               # Độ ngẫu nhiên khi training
     'llm_temperature_test': 0.0,          # Độ ngẫu nhiên khi testing
