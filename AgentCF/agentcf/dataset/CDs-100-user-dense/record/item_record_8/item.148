@@ -1,0 +1,30 @@
+~~~~~~~~~~~~~~~~~~~~Meta information~~~~~~~~~~~~~~~~~~~~
+The item has the following characteristics: {'item_title': "Simon and Garfunkel's Greatest Hits", 'item_class': 'Pop; Singer-Songwriters'} 
+~~~~~~~~~~~~~~~~~~~~New interaction~~~~~~~~~~~~~~~~~~~~
+You: Simon and Garfunkel's Greatest Hits and the other movie: Back in Black are recommended to a user.
+
+You have the following description: The CD is called 'Simon and Garfunkel's Greatest Hits'. The category of this CD is: 'Pop; Singer-Songwriters'.
+
+The other movie has the following description: The CD is called 'Back in Black'. The category of this CD is: 'Classic Rock; Album-Oriented Rock (AOR)'.
+
+The user's previous self-description is as follows:  I enjoy listening to CDs very much.
+
+The user updates his self-description as follows: [I prefer intimate, vocal‑forward CDs — acoustic or lightly arranged recordings that highlight close harmonies, warm clear vocal tone, lyrical storytelling, and natural dynamics. I value clean, transparent production that preserves space and acoustic detail and enjoy compilations or albums where vocal delivery and songwriting are the main focus. From before: I enjoy listening to CDs very much. I dislike heavily distorted, guitar‑dominated hard rock, overcompressed loudness, relentless wall‑of‑sound production, and mixes that bury vocals or prioritize spectacle over nuanced vocal interplay and lyricism.]
+
+You update your description as follows: Folk‑pop compilation highlighting intimate, close two‑part harmonies, warm clear vocal tones, acoustic/light arrangements, transparent natural dynamics and lyric‑forward mixes that preserve vocal clarity and acoustic space—ideal for listeners who prefer nuanced vocal storytelling.
+
+~~~~~~~~~~~~~~~~~~~~New interaction~~~~~~~~~~~~~~~~~~~~
+You: Simon and Garfunkel's Greatest Hits and the other movie: One Night Only are recommended to a user.
+
+You have the following description: Folk‑pop compilation highlighting intimate, close two‑part harmonies, warm clear vocal tones, acoustic/light arrangements, transparent natural dynamics and lyric‑forward mixes that preserve vocal clarity and acoustic space—ideal for listeners who prefer nuanced vocal storytelling.
+
+The other movie has the following description: The CD is called 'One Night Only'. The category of this CD is: 'Pop; Oldies; Baroque Pop'.
+
+The user's previous self-description is as follows: I gravitate toward album‑oriented, piano‑forward records with mature, intimate vocals and organic instrumentation — live drums, warm bass and tasteful guitars — that emphasize subtle dynamics, cohesive start‑to‑finish sequencing and songwriting depth over gloss. I enjoy listening to CDs very much and prefer releases that make the CD format rewarding: full‑album flow, nuanced arrangements and contemporary yet natural production. I tend to dislike single‑driven or formulaic releases — overly glossy, radio‑centric contemporary country productions with thin or synthetic arrangements and little album cohesion — because they undermine the immersive, attentive CD experience I cherish.
+
+The user updates his self-description as follows: I now gravitate toward classic folk‑rock and duo‑harmony records — articulate, lyric‑forward songwriting delivered in clear, close vocal blends, intimate acoustic guitar, and tasteful string or orchestral touches that support rather than dominate, plus timeless production that keeps vocals front and center. I also appreciate well‑curated compilations or greatest‑hits sequencing that highlight songcraft and maintain listening flow.
+I still favor album‑oriented releases with cohesive sequencing, mature intimate vocals, organic instrumentation (live drums, warm bass, tasteful guitars), subtle dynamics, nuanced arrangements, and mixes that preserve acoustic space and vocal clarity — the kinds of CDs that reward attentive start‑to‑finish listening.
+I dislike formulaic, single‑driven or overly glossy radio productions; thin or synthetic arrangements that obscure warmth; overproduction that buries lyrics; and releases with little cohesion or lyric clarity.
+
+You update your description as follows: Folk‑pop compilation (Simon & Garfunkel's Greatest Hits): consistent intimate two‑part harmonies, close‑mic vocal clarity, warm acoustic guitar and subtle piano, natural dynamics, lyric‑forward mixes and cohesive hits sequencing—ideal for listeners who favor album‑oriented, organic arrangements and clear storytelling vocals.
+

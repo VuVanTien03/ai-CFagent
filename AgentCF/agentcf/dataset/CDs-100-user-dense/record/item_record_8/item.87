@@ -1,0 +1,30 @@
+~~~~~~~~~~~~~~~~~~~~Meta information~~~~~~~~~~~~~~~~~~~~
+The item has the following characteristics: {'item_title': 'Born in the USA', 'item_class': 'Classic Rock; Album-Oriented Rock (AOR)'} 
+~~~~~~~~~~~~~~~~~~~~New interaction~~~~~~~~~~~~~~~~~~~~
+You: Born in the USA and the other movie: We Can't Dance are recommended to a user.
+
+You have the following description: The CD is called 'Born in the USA'. The category of this CD is: 'Classic Rock; Album-Oriented Rock (AOR)'.
+
+The other movie has the following description: The CD is called 'We Can't Dance'. The category of this CD is: 'Rock; Progressive; Progressive Rock'.
+
+The user's previous self-description is as follows:  I enjoy listening to CDs very much.
+
+The user updates his self-description as follows: I now prefer CDs with polished AOR/classic‑rock production, clear, radio‑friendly hooks, concise song structures, and a mix of upbeat singles and mid‑tempo variety — albums like Bruce Springsteen’s Born in the U.S.A. that reward repeated, casual listening. I have always enjoyed listening to CDs as a format and value records that deliver immediate musical payoff and strong, memorable melodies. I dislike albums dominated by long progressive‑rock pieces, sprawling arrangements or complex, slow‑unfolding songs that demand patient, highly focused listening; extended, non‑hook‑driven tracks and heavily experimental prog passages are less enjoyable to me.
+
+You update your description as follows: Born in the USA — Classic Rock/AOR: polished, radio-ready production with concise, hook-driven songs; mixes upbeat singles and mid-tempo variety, delivering immediate musical payoff and memorable melodies that reward casual, repeat listening for fans of concise, melody-focused albums.
+
+~~~~~~~~~~~~~~~~~~~~New interaction~~~~~~~~~~~~~~~~~~~~
+You: Born in the USA and the other movie: Phil Collins - Hits are recommended to a user.
+
+You have the following description: Born in the USA — Classic Rock/AOR: polished, radio-ready production with concise, hook-driven songs; mixes upbeat singles and mid-tempo variety, delivering immediate musical payoff and memorable melodies that reward casual, repeat listening for fans of concise, melody-focused albums.
+
+The other movie has the following description: Phil Collins – Hits: studio‑polished adult‑contemporary collection—glossy synths, gated‑reverb drums, tight radio edits and strong hooks. Vocal‑forward, roomy mixes preserve transients, phrasing and dynamics; clear mastering, reliable metadata and thorough liner notes reward repeat listening.
+
+The user's previous self-description is as follows: I now particularly prize album‑oriented, late‑analog studio records like Déjà Vu — harmony‑forward works with rich multi‑part vocal arrangements, intimate acoustic textures, layered guitar interplay, roomy analog mixes that preserve inner detail and headroom, tasteful reverb/stereo spread and sequencing that rewards attentive start‑to‑finish listening. 
+I also value, more generally, polished studio engineering and layered arrangements (including guitar harmonies), nuanced album sequencing, extended dynamic moments, rich stereo detail and, when appropriate, rhythm‑forward pop/dance records with tight, punchy production and driving low end. 
+I dislike patchwork greatest‑hits or anthology formats and concise singles compilations that feel fragmented; mixes that over‑smooth or radio‑compress and flatten dynamics; records that minimize guitar presence or foreground mid‑forward breathy leads at the expense of arrangements; and poorly‑sequenced, ballad‑heavy discs that lack compelling instrumental layering.
+
+The user updates his self-description as follows: I especially prize cohesive, studio‑sequenced Classic Rock/AOR albums with strong band arrangements—prominent, layered guitar interplay, organ/sax/full‑band textures and polished yet roomy mixes that retain dynamics and reward start‑to‑finish listening. More generally I value album‑oriented, late‑analog studio records (think Déjà Vu): harmony‑forward works with rich multi‑part vocals, intimate acoustic moments, tasteful reverb and stereo spread, layered guitar harmonies, roomy analog mixes that preserve inner detail and headroom, nuanced sequencing, extended dynamic moments and rich stereo detail. I also appreciate, when appropriate, rhythm‑forward pop/dance with tight, punchy production and driving low end. I dislike patchwork greatest‑hits or concise singles compilations, tight radio edits and over‑compressed mixes that flatten dynamics, mixes that over‑smooth or minimize guitar presence, foregrounded mid‑forward breathy lead treatments that sacrifice arrangement, and poorly‑sequenced, ballad‑heavy discs lacking compelling instrumental layering.
+
+You update your description as follows: Cohesive, studio‑sequenced AOR album: polished yet roomy late‑analog mixes with preserved headroom, layered guitar harmonies, organ/sax textures, multi‑part vocals, tasteful reverb and intimate acoustic moments. Full‑length arrangements and nuanced sequencing reward start‑to‑finish listening, not a truncated singles compilation.
+

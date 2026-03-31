@@ -1,0 +1,41 @@
+~~~~~~~~~~~~~~~~~~~~Meta information~~~~~~~~~~~~~~~~~~~~
+The item has the following characteristics: {'item_title': 'Animals Audio Pink Floyd', 'item_class': 'Rock; Progressive; Progressive Rock'} 
+~~~~~~~~~~~~~~~~~~~~New interaction~~~~~~~~~~~~~~~~~~~~
+You: Animals Audio Pink Floyd and the other movie: <span id="parentalAdvisory" class="a-size-medium a-color-secondary a-text-normal" are recommended to a user.
+
+You have the following description: The CD is called 'Animals Audio Pink Floyd'. The category of this CD is: 'Rock; Progressive; Progressive Rock'.
+
+The other movie has the following description: The CD is called '<span id="parentalAdvisory" class="a-size-medium a-color-secondary a-text-normal"'. The category of this CD is: 'Alternative Rock; American Alternative'.
+
+The user's previous self-description is as follows:  I enjoy listening to CDs very much.
+
+The user updates his self-description as follows: I particularly enjoy album-length, concept-driven CDs—progressive rock or similar releases with long-form tracks, cohesive sequencing, and high production values (for example, Pink Floyd’s Animals). I favor well-known recordings presented on CD with clear metadata and thoughtful packaging that preserve the intended listening experience. I still enjoy listening to CDs very much. I dislike discs with malformed or missing metadata, ambiguous or corrupted titles, poor production, or collections that read like disconnected singles rather than a unified album; those traits make a CD much less appealing to me.
+
+You update your description as follows: '<span id="parentalAdvisory" class="a-size-medium a-color-secondary a-text-normal'" — Alternative Rock (American). Malformed HTML title, ambiguous or missing metadata, minimal packaging and disjointed track sequencing; appeals less to listeners who prefer cohesive, well-documented, album-length progressive releases.
+
+~~~~~~~~~~~~~~~~~~~~New interaction~~~~~~~~~~~~~~~~~~~~
+You: Animals Audio Pink Floyd and the other movie: Excitable Boy are recommended to a user.
+
+You have the following description: '<span id="parentalAdvisory" class="a-size-medium a-color-secondary a-text-normal'" — Alternative Rock (American). Malformed HTML title, ambiguous or missing metadata, minimal packaging and disjointed track sequencing; appeals less to listeners who prefer cohesive, well-documented, album-length progressive releases.
+
+The other movie has the following description: The CD is called 'Excitable Boy'. The category of this CD is: 'Classic Rock; Album-Oriented Rock (AOR)'.
+
+The user's previous self-description is as follows: I’m especially drawn to Pop/Tribute soundtrack CDs such as I Am Sam — multi-artist cover compilations tied to films that offer inventive reinterpretations, eclectic performers, and broad stylistic variety that reward repeated listening. I enjoy listening to CDs very much and value physical releases, thoughtful track sequencing, and albums that make collecting satisfying. I’m less fond of contemporary country “greatest-hits” or other narrowly genre-specific compilations that prioritize straightforward radio hits over reinterpretation and variety.
+
+The user updates his self-description as follows: I now favor immersive, concept-driven albums — psychedelic/progressive or atmospheric rock with expansive arrangements, long tracks, cinematic production, wide dynamic range, and sequencing that builds a sustained mood; I prize physical pressings with rich audio and evocative artwork that reward deep, repeated listens. I’m also drawn to multi‑artist tribute/soundtrack compilations that offer inventive reinterpretations and stylistic variety, and I value releases with careful track sequencing and collectible packaging. I appreciate cohesive, album‑length experiences that reveal new details over time. I dislike records that prioritize radio‑ready singles and straight‑ahead AOR/classic‑rock formulas over atmosphere or thematic depth, as well as releases with minimal or ambiguous packaging/metadata or disjointed sequencing that undermine collectibility and long-form listening.
+
+You update your description as follows: Animals (Pink Floyd) — remastered progressive/psychedelic album with expansive, cinematic arrangements, long tracks, wide dynamic range, carefully sequenced concept continuity, detailed liner notes and collectible packaging; appealing to listeners who favor immersive, album-length experiences rewarding deep, repeated listens.
+
+~~~~~~~~~~~~~~~~~~~~New interaction~~~~~~~~~~~~~~~~~~~~
+You: Animals Audio Pink Floyd and the other movie: 10 From 6 are recommended to a user.
+
+You have the following description: Animals (Pink Floyd) — remastered progressive/psychedelic album with expansive, cinematic arrangements, long tracks, wide dynamic range, carefully sequenced concept continuity, detailed liner notes and collectible packaging; appealing to listeners who favor immersive, album-length experiences rewarding deep, repeated listens.
+
+The other movie has the following description: The CD is called '10 From 6'. The category of this CD is: 'Classic Rock; Album-Oriented Rock (AOR)'.
+
+The user's previous self-description is as follows: I gravitate toward archival, album‑centric productions — records with meticulous analog warmth, conservative mastering and preserved headroom; rich stereo imaging; authentic period strings/brass and intimate close‑miked vocals; sequencing that rewards listening start‑to‑finish (I love cross‑faded medleys and LP‑style narratives). I prefer album‑oriented classic rock/AOR with driving, guitar‑forward arrangements, gritty vocals, muscular rhythms, sustained moods, high‑energy choruses and memorable riffs — music that builds cohesively across tracks and rewards full‑sequence listening. I dislike tight pop‑singles compilations or songs engineered solely for instant hooks and ultra‑concise arrangements; overly bright, clinical or glossy mastering that flattens depth; collections that fragment an album’s atmosphere into bite‑size hits; and any rock/progressive release that sacrifices analog warmth, dynamic headroom or cohesive sequencing for processed sheen.
+
+The user updates his self-description as follows: I now especially favor remastered, album‑length productions that preserve wide dynamic range and analog warmth — expansive, cinematic arrangements and long tracks with careful concept continuity, detailed liner notes and collectible packaging that reward deep, repeated listens (think immersive progressive/psychedelic remasters). I gravitate toward archival, album‑centric rock with conservative mastering and preserved headroom; rich stereo imaging, authentic period strings/brass and intimate close‑miked vocals; LP‑style narratives, cross‑faded medleys and sequencing that rewards start‑to‑finish listening. I enjoy guitar‑forward classic rock/AOR textures with gritty vocals, muscular rhythms, sustained moods and memorable riffs that build cohesively across tracks. I dislike tight pop‑singles compilations or releases mastered for instant hooks, overly bright or clinical mastering that flattens depth, fragmented tracklists that break an album’s atmosphere, or any rock/prog reissue that sacrifices analog warmth and dynamic headroom for processed sheen or vague packaging.
+
+You update your description as follows: Animals (Pink Floyd) — remastered progressive/psychedelic album preserving wide dynamic range, analog warmth and headroom; expansive, cinematic arrangements, long cross‑faded tracks, rich stereo imaging, authentic period strings/brass, intimate vocals, detailed liner notes and collectible packaging for immersive start‑to‑finish listening.
+
