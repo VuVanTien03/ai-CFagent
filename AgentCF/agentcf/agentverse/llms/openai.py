@@ -110,6 +110,26 @@ def create_embeddings_model_ollama(
     return OllamaEmbeddings(model=model)
 
 
+def truncate_text_for_embedding(text: str, max_chars: int = 1500) -> str:   
+    """
+    Truncate text để vừa với context length của embedding model.
+    mxbai-embed-large có context length khoảng 512 tokens (~2000 chars).
+    Để an toàn, giới hạn ở 1500 chars (~375 tokens).
+    
+    Args:
+        text: Văn bản cần truncate
+        max_chars: Số ký tự tối đa (default: 1500)
+    
+    Returns:
+        Văn bản đã được truncate nếu cần
+    """
+    if len(text) <= max_chars:
+        return text
+    
+    # Cắt và thêm "..." để chỉ ra đã bị truncate
+    return text[:max_chars - 3] + "..."
+
+
 @llm_registry.register("gpt-5-mini")
 class OpenAICompletion(BaseCompletionModel):
     args: OpenAICompletionArgs = Field(default_factory=OpenAICompletionArgs)
@@ -239,7 +259,9 @@ class OpenAIEmbedding(BaseCompletionModel):
 
     def generate_response(self, prompt: str) -> LLMResult:
         """Synchronous embedding generation using LangChain"""
-        embedding_vector = self.embeddings.embed_query(prompt)
+        # Truncate text để tránh lỗi context length
+        truncated_prompt = truncate_text_for_embedding(prompt)
+        embedding_vector = self.embeddings.embed_query(truncated_prompt)
         
         return LLMResult(
             content=str(embedding_vector),  # Convert to string for compatibility
@@ -252,10 +274,19 @@ class OpenAIEmbedding(BaseCompletionModel):
         """Async embedding generation using LangChain"""
         while True:
             try:
+                # Truncate tất cả sentences để tránh lỗi context length
+                # Model mxbai-embed-large có context length ~512 tokens
+                truncated_sentences = [truncate_text_for_embedding(s) for s in sentences]
+                
+                # Log warning nếu có text bị truncate
+                for i, (orig, trunc) in enumerate(zip(sentences, truncated_sentences)):
+                    if len(orig) != len(trunc):
+                        logger.info(f"Text #{i} truncated: {len(orig)} -> {len(trunc)} chars")
+                
                 # For Ollama, we don't need API key rotation
                 # Embed documents (handles batching internally)
                 embeddings_result = await asyncio.to_thread(
-                    self.embeddings.embed_documents, sentences
+                    self.embeddings.embed_documents, truncated_sentences
                 )
                 
                 # Return format compatible with original code
@@ -267,6 +298,18 @@ class OpenAIEmbedding(BaseCompletionModel):
                 if 'quota' in error_msg.lower() or 'deactivated' in error_msg.lower():
                     logger.info(f"Embedding API issue")
                     raise
+                # Nếu vẫn gặp lỗi context length, giảm max_chars và thử lại
+                if 'context length' in error_msg.lower() or 'input length' in error_msg.lower():
+                    logger.info(f"Context length error even after truncation. Reducing max_chars...")
+                    truncated_sentences = [truncate_text_for_embedding(s, max_chars=800) for s in sentences]
+                    try:
+                        embeddings_result = await asyncio.to_thread(
+                            self.embeddings.embed_documents, truncated_sentences
+                        )
+                        return [{'data': [{'embedding': emb}]} for emb in embeddings_result]
+                    except Exception as e2:
+                        logger.info(f"Still failed after aggressive truncation: {e2}")
+                        raise
                 logger.info(f"Error: {e}, Retrying...")
                 await asyncio.sleep(20)
                 continue

@@ -17,7 +17,7 @@ chat_api_batch: 10
 match_rule: fuzzy
 saved: True
 loaded: ~
-evaluation: sequential  # Three modes in evaluation: basic, rag, sequential
+evaluation: rag  # Three modes in evaluation: basic, rag, sequential
 all_update_rounds: 2
 update_neg_item: ~
 test_only: ~

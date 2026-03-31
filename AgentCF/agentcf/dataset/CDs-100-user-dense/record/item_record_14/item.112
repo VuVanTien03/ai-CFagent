@@ -1,0 +1,28 @@
+~~~~~~~~~~~~~~~~~~~~Meta information~~~~~~~~~~~~~~~~~~~~
+The item has the following characteristics: {'item_title': 'Beatles for Sale', 'item_class': 'Classic Rock; British Invasion'} 
+~~~~~~~~~~~~~~~~~~~~New interaction~~~~~~~~~~~~~~~~~~~~
+You: Beatles for Sale and the other movie: Worship Again are recommended to a user.
+
+You have the following description: The CD is called 'Beatles for Sale'. The category of this CD is: 'Classic Rock; British Invasion'.
+
+The other movie has the following description: The CD is called 'Worship Again'. The category of this CD is: 'Christian; Pop & Contemporary'.
+
+The user's previous self-description is as follows:  I enjoy listening to CDs very much.
+
+The user updates his self-description as follows: I prefer studio-era classic rock—especially British Invasion records—with strong Lennon–McCartney–style songwriting, melodic variety, tight studio performances, and releases that benefit from high-quality CD remasters or collector’s editions. I enjoy listening to CDs and value recordings that reward repeated, focused listening and careful mastering. I dislike CDs that are primarily live worship or congregational contemporary worship releases that emphasize atmosphere over studio craft, have narrow devotional setlists aimed at corporate singing, or offer little that benefits from the CD format.
+
+You update your description as follows: "Beatles for Sale" — studio-era Beatles album highlighting tight Lennon–McCartney songwriting, melodic variety and meticulous studio craft; high-quality CD remasters and collector’s editions reveal micro-details and superior mastering, rewarding repeated, focused listening for British Invasion classic-rock fans.
+
+~~~~~~~~~~~~~~~~~~~~New interaction~~~~~~~~~~~~~~~~~~~~
+You: Beatles for Sale and the other movie: <span class="a-size-medium a-color-secondary a-text-normal" are recommended to a user.
+
+You have the following description: "Beatles for Sale" — studio-era Beatles album highlighting tight Lennon–McCartney songwriting, melodic variety and meticulous studio craft; high-quality CD remasters and collector’s editions reveal micro-details and superior mastering, rewarding repeated, focused listening for British Invasion classic-rock fans.
+
+The other movie has the following description: The CD is called '<span class="a-size-medium a-color-secondary a-text-normal"'. The category of this CD is: 'Classic Rock; Southern Rock'.
+
+The user's previous self-description is as follows:  I enjoy listening to CDs very much.
+
+The user updates his self-description as follows: I prefer studio-era, meticulously crafted CDs that reward repeated, focused listening — for example Beatles-era albums with tight Lennon–McCartney songwriting, melodic variety, and careful studio craft. I seek high-quality CD remasters and collector’s editions that reveal micro-details and superior mastering, because sound quality and edition documentation are important to me. I enjoy listening to CDs very much and prioritize releases that deliver nuance and fidelity on close listens. I dislike releases with unclear or malformed titles/metadata, generic genre-only listings with no mastering or remaster information, and poorly documented issues that suggest low sound quality or a lack of musical detail.
+
+You update your description as follows: Beatles for Sale — studio-era Lennon–McCartney songwriting, melodic variety and meticulous studio craft; new high‑quality CD remaster/collector’s edition with superior mastering revealing micro‑details, full mastering credits, source‑tape notes, corrected metadata and informative booklet—ideal for focused repeat listening.
+
