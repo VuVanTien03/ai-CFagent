@@ -1,2 +1,15 @@
 ~~~~~~~~~~~~~~~~~~~~Meta information~~~~~~~~~~~~~~~~~~~~
 The item has the following characteristics: {'item_title': 'Driving Rain', 'item_class': 'Classic Rock; Album-Oriented Rock (AOR)'} 
+~~~~~~~~~~~~~~~~~~~~New interaction~~~~~~~~~~~~~~~~~~~~
+You: Driving Rain and the other movie: Home for Christmas are recommended to a user.
+
+You have the following description: The CD is called 'Driving Rain'. The category of this CD is: 'Classic Rock; Album-Oriented Rock (AOR)'.
+
+The other movie has the following description: The CD is called 'Home for Christmas'. The category of this CD is: 'Pop; Vocal Pop'.
+
+The user's previous self-description is as follows: I now favor vocal‑forward, intimate recordings—warm, close‑mic lead vocals that sit up front and reveal emotional detail; concise, subtle melodic songwriting; tasteful, analog‑leaning studio sheen; gentle acoustic textures (fingerpicked or slide touches), patient pacing, and light orchestration. From earlier tastes I retain a liking for cohesive, contemplative albums and for classic‑rock records only when they are introspective, layered but restrained, and prioritize mood over bombast. Dislikes: loud, arena‑oriented AOR or high‑energy greatest‑hits fare; flashy, bombastic guitar showmanship; over‑compressed or harsh production that flattens dynamics; disposable party anthems; and single‑oriented pop that sacrifices vocal intimacy and tasteful studio craft.
+
+The user updates his self-description as follows: I now also appreciate guitar‑forward classic‑rock/AOR textures — widescreen, band‑driven arrangements with driving rhythms, layered electric guitars and dynamic, slightly raw production that still serves the song; I like vocals that sit naturally in the mix rather than overly close‑miced intimacy, and tasteful lead guitar work that supports melody rather than pure showmanship. I retain a fondness for vocal‑forward, intimate recordings with warm, analog‑leaning sheen, concise melodic songwriting, gentle acoustic touches, patient pacing, light orchestration, and cohesive, contemplative albums. I dislike over‑compressed or harsh production that flattens dynamics; disposable party anthems and single‑chasing pop that sacrifice craft; and gratuitous, flashy virtuosity that exists only to impress rather than to serve the song.
+
+You update your description as follows: Driving Rain: classic‑rock/AOR widescreen album with band‑driven arrangements, driving rhythms and stacked electric guitars; slightly raw, analog‑leaning production that preserves dynamics and natural vocals in the mix; tasteful, melody‑serving lead guitar and restrained showmanship across a cohesive set, avoiding overcompression and flashy virtuosity.
+

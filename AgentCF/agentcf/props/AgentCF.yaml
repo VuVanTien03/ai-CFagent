@@ -6,7 +6,7 @@ train_neg_sample_args:
   sample_num: 1
 #llm_model: text-davinci-003
 llm_model: gpt-5-mini
-embedding_model: text-embedding-ada-002
+embedding_model: ollama-embedding
 llm_temperature: 0.2
 llm_temperature_test: 0
 max_tokens: 2000

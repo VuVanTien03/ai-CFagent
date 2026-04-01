@@ -1,2 +1,32 @@
 ~~~~~~~~~~~~~~~~~~~~Meta information~~~~~~~~~~~~~~~~~~~~
 The item has the following characteristics: {'item_title': 'All-Time Greatest Hits', 'item_class': 'Pop; Vocal Pop'} 
+~~~~~~~~~~~~~~~~~~~~New interaction~~~~~~~~~~~~~~~~~~~~
+You: All-Time Greatest Hits and the other movie: Turn It On Again: The Hits are recommended to a user.
+
+You have the following description: The CD is called 'All-Time Greatest Hits'. The category of this CD is: 'Pop; Vocal Pop'.
+
+The other movie has the following description: 'Turn It On Again: The Hits' — lovingly remastered from original analog tapes; preserves vintage warmth and wide dynamic range. Dramatic shifts, layered keyboards/guitars, shifting time signatures, tasteful extended interplay, tight sequencing and minimal compression — ideal for listeners who enjoy attentive, start‑to‑finish prog compilations.
+
+The user's previous self-description is as follows: I now particularly favor intimate, up‑front vocal harmonies and clear acoustic‑guitar textures—records and remasters that bring vocals and lyrics forward while preserving natural tone and room ambience, with concise sequencing that spotlights individual songs. I still value warm, piano‑forward arrangements when present, memorable melodies, mature songwriting, and midrange‑rich, minimally processed production that reveals subtle details on repeat listens. I prefer CDs that work as both focused, close listens and comfortable background replay, prioritizing song‑level clarity over dense instrumentation. I dislike heavy, densely layered production, over‑polished or uniformly compressed masters, and sprawling double‑album or LP‑style cohesion that buries vocal intimacy and makes individual tracks feel subordinate to an album concept. I avoid records whose mastering or arrangement sacrifices midrange presence and vocal immediacy for bombast or homogenized loudness.
+
+The user updates his self-description as follows: Newfound preferences: I unexpectedly favor Pop/Vocal‑Pop compilations with tight, radio‑style mixes — lead vocals sharply front‑and‑center, concise arrangements, and strong hooks. I’m more accepting of tasteful studio polish and mild compression when it enhances vocal immediacy and melodic clarity.
+Past preferences I still value: intimate, up‑front vocal harmonies; clear acoustic‑guitar textures; warm, piano‑forward moments when present; memorable melodies and mature songwriting; midrange‑rich, natural tonal color that reveals subtle details; sequencing that spotlights individual songs rather than sprawling, concept‑first formats.
+Dislikes: sprawling prog excess — frequent time‑signature shifts, extended instrumental interplay, or dense keyboard/guitar layering that buries songs; masters that prioritize bombast, extreme loudness, or blanket density at the expense of vocal presence and lyric detail.
+
+You update your description as follows: Pop/Vocal‑Pop compilation with tight, radio‑style mixes: lead vocals front‑and‑center, concise arrangements, strong hooks, mild compression and tasteful polish for vocal immediacy. Intimate harmonies, clear acoustic and warm piano; sequencing spotlights individual songs—opposite of sprawling, bombastic prog.
+
+~~~~~~~~~~~~~~~~~~~~New interaction~~~~~~~~~~~~~~~~~~~~
+You: All-Time Greatest Hits and the other movie: Janis Joplin Greatest Hits are recommended to a user.
+
+You have the following description: Pop/Vocal‑Pop compilation with tight, radio‑style mixes: lead vocals front‑and‑center, concise arrangements, strong hooks, mild compression and tasteful polish for vocal immediacy. Intimate harmonies, clear acoustic and warm piano; sequencing spotlights individual songs—opposite of sprawling, bombastic prog.
+
+The other movie has the following description: Janis Joplin — raw, gritty midrange; raspy, breathy lead vocals pushed front‑and‑center, emotionally urgent performances with preserved microdetail and wide natural dynamics. Sparse live‑feel arrangements, transparent minimal mastering, warm‑translucent tone and tasteful room reverb that foreground lyrics and phrasing.
+
+The user's previous self-description is as follows: I now gravitate to meticulously sequenced singles-style compilations: concise 2–3‑minute, hook‑forward tracks with clear, present lead vocals, tight arrangements, strong harmonies, punchy vocal‑forward remastering from original tapes, audible micro‑detail and thorough edition documentation. I appreciate studio‑era craft that reveals performance nuance and economical songwriting. 
+I still value career‑spanning cohesion, preserved dynamics, roomy electric‑guitar atmospheres, punchy drums, gritty/blues‑tinged vocals and layered harmonies, clear instrument separation, tasteful unobtrusive vocal processing, warm vintage touches, steady tempos and production variety that supports front‑to‑back listening. 
+I dislike hyper‑glossy, surgically perfected pop; heavy pitch‑correction and processing that sterilize performances; mixes or mastering that flatten dynamics or erase ensemble character; and sequencing or transfers that read like a playlist of isolated singles without craft or sonic clarity.
+
+The user updates his self-description as follows: I now appreciate tight, radio‑style mixes with mild compression and tasteful polish when they deliver concise, hook‑forward tracks with present, intimate lead vocals, warm piano/acoustic detail and close harmonies. Sequencing that spotlights individual songs is acceptable — even welcome — if it enhances immediacy and sing‑along clarity. I still value clear, forward lead vocals, audible micro‑detail, punchy drums and roomy electric guitars, warm vintage tonal color, steady tempos and production variety that supports focused listening. I prefer mixes that preserve dynamic contrast whenever possible but will accept tasteful compression that increases vocal presence without sterilizing performance. I dislike heavy pitch‑correction, hyper‑glossy surgical processing, mastering that flattens dynamics or erases ensemble character, and careless playlist sequencing that sacrifices musical identity.
+
+You update your description as follows: Tight, radio‑style mixes with tasteful mild compression increase vocal presence without flattening dynamics; present, intimate lead vocals, close harmonies, warm piano/acoustic imaging, punchy drums and roomy guitars. Sequencing spotlights songs for immediate, sing‑along clarity while preserving micro‑detail and minimal pitch‑correction.
+
